@@ -6,10 +6,11 @@
 	<artifactId>DrivenByMoss</artifactId>
 	<packaging>jar</packaging>
 	<name>DrivenByMoss</name>
-	<version>6.4</version>
+	<version>6.5</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bitwig.extension.directory>/Users/chrisbc/Documents/Bitwig Studio/Extensions/</bitwig.extension.directory>
 	</properties>
 
 	<repositories>

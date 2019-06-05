@@ -4,7 +4,7 @@
   <groupId>de.mossgrabers</groupId>
   <artifactId>DrivenByMoss</artifactId>
   <name>DrivenByMoss</name>
-  <version>6.4</version>
+  <version>6.5</version>
   <build>
     <plugins>
       <plugin>
@@ -122,5 +122,6 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <bitwig.extension.directory>/Users/chrisbc/Documents/Bitwig Studio/Extensions/</bitwig.extension.directory>
   </properties>
 </project>
