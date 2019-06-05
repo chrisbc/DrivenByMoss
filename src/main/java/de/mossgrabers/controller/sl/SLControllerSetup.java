@@ -148,6 +148,7 @@ public class SLControllerSetup extends AbstractControllerSetup<SLControlSurface,
         this.colorManager = new ColorManager ();
         this.valueChanger = new DefaultValueChanger (128, 1, 0.5);
         this.configuration = new SLConfiguration (host, this.valueChanger, isMkII);
+        // this.host.println(">> SLControllerSetup")
     }
 
 
@@ -200,6 +201,8 @@ public class SLControllerSetup extends AbstractControllerSetup<SLControlSurface,
         final SLControlSurface surface = new SLControlSurface (hostProxy, this.colorManager, this.configuration, output, input, this.isMkII);
         surface.setDisplay (new SLDisplay (hostProxy, output));
         this.surfaces.add (surface);
+
+        surface.println(">> createSurface");
     }
 
 
@@ -353,7 +356,9 @@ public class SLControllerSetup extends AbstractControllerSetup<SLControlSurface,
     private void handleTrackChange (final boolean isSelected)
     {
         final ModeManager modeManager = this.getSurface ().getModeManager ();
+        // final IHost hostProxy = this.model.getHost ();
         if (isSelected && modeManager.isActiveOrTempMode (Modes.MODE_MASTER))
+            // hostProxy.println("handleTrackChange: " + Modes.MODE_TRACK);
             modeManager.setActiveMode (Modes.MODE_TRACK);
     }
 }

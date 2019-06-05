@@ -245,6 +245,7 @@ public class ControlView extends ControlOnlyView<SLControlSurface, SLConfigurati
     public void onButtonRow3 (final int index, final ButtonEvent event)
     {
         if (!this.model.getMasterTrack ().isSelected ())
+            this.surface.println("selectTrack  " + index);
             this.selectTrack (index);
     }
 
@@ -420,9 +421,12 @@ public class ControlView extends ControlOnlyView<SLControlSurface, SLConfigurati
             this.surface.updateButton (SLControlSurface.MKII_BUTTON_ROW2_8, isNoOverlayMode && cd.canSelectNextFX () ? SLControlSurface.MKII_BUTTON_STATE_ON : SLControlSurface.MKII_BUTTON_STATE_OFF);
         }
 
-        // Button row 3: Selected track indication
-        for (int i = 0; i < 8; i++)
+        // Button row 3: Selected track indication        
+        for (int i = 0; i < 8; i++) {
+            if (tb.getItem (i).isSelected ())
+                this.surface.println("Button row 3: Selected track " + i);
             this.surface.updateButton (SLControlSurface.MKII_BUTTON_ROW3_1 + i, tb.getItem (i).isSelected () ? SLControlSurface.MKII_BUTTON_STATE_ON : SLControlSurface.MKII_BUTTON_STATE_OFF);
+        }
 
         // LED indications for device parameters
         ((DeviceParamsMode) this.surface.getModeManager ().getMode (Modes.MODE_DEVICE_PARAMS)).setLEDs ();

@@ -988,6 +988,8 @@ public abstract class AbstractControlSurface<C extends Configuration> implements
         if (this.buttonStates[buttonID] != ButtonEvent.DOWN)
             return;
 
+        this.println ("Button LONG press: " + buttonID);
+        
         this.buttonStates[buttonID] = ButtonEvent.LONG;
         this.handleCCEvent (0, buttonID, 127);
     }
